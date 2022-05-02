@@ -1,0 +1,1 @@
+curl -L https://ommer-lab.com/files/latent-diffusion/text2img.zip | gsutil cp - gs://latentdiffusion-bucket/models/ldm/text2img256/model.zip

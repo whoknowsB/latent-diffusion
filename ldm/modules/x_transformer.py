@@ -606,6 +606,8 @@ class TransformerWrapper(nn.Module):
             **kwargs
     ):
         b, n, device, num_mem = *x.shape, x.device, self.num_memory_tokens
+        # HOT FIX
+        x = x.to(next(self.token_emb.parameters()).device)
         x = self.token_emb(x)
         x += self.pos_emb(x)
         x = self.emb_dropout(x)
