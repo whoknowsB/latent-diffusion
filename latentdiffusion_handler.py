@@ -85,7 +85,7 @@ class ModelHandler(object):
         self.initialized = True
 
     def handle(self, data, context):
-        prompt = str(data[0]['body'])
+        prompt = str(data[0])
         uc = None
         all_samples=[]
 
@@ -172,6 +172,9 @@ class ModelHandler(object):
 #                     --handler latentdiffusion_handler.py \
 #                     --extra-files /home/callmeb/Documents/reply-hackathon-2022/latent-diffusion/models/ldm/text2img-large/config.yaml \
 #                     --force
+
+# %%
+# torchserve --start --models latentdiffusion=latentdiffusion.mar  
 
 # %%
 #mv latentdiffusion.mar model_store/  
