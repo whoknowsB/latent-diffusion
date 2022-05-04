@@ -26,8 +26,9 @@ RUN torch-model-archiver \
     --handler=/home/model-server/latentdiffusion_handler.py \
     --extra-files=/home/model-server/models/ldm/text2img-large/config.yaml \
     --export-path=/home/model-server/model-store 
-    
 
+RUN rm -f /home/model-server/models/ldm/text2img-large/model.ckpt
+    
 CMD ["torchserve", \
      "--start", \
      "--ts-config=/home/model-server/config.properties", \
