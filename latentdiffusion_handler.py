@@ -177,9 +177,6 @@ class ModelHandler(object):
 # torchserve --start --models latentdiffusion=latentdiffusion.mar  
 
 # %%
-#mv latentdiffusion.mar model_store/  
-
-# %%
 # curl --location --request POST 'http://127.0.0.1:8080/predictions/latentdiffusion?data=a dog with funny blue hat'
 
 

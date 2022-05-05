@@ -27,10 +27,6 @@ RUN torch-model-archiver \
     --extra-files=/home/model-server/models/ldm/text2img-large/config.yaml \
     --export-path=/home/model-server/model-store 
 
-USER root
-RUN rm -f /home/model-server/models/ldm/text2img-large/model.ckpt
-USER model-server    
-
 CMD ["torchserve", \
      "--start", \
      "--ts-config=/home/model-server/config.properties", \
