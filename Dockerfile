@@ -4,7 +4,7 @@ COPY . /home/model-server/
 
 USER root
 RUN printf "\nservice_envelope=json" >> /home/model-server/config.properties
-RUN printf "\ndefault_workers_per_model=2" >> /home/model-server/config.properties
+RUN printf "\ndefault_workers_per_model=1" >> /home/model-server/config.properties
 
 RUN apt-get install -y wget
 RUN if [ ! -f /home/model-server/models/ldm/text2img-large/model.ckpt ]; then \
