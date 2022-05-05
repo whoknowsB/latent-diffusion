@@ -9,7 +9,7 @@ RUN printf "\ndefault_workers_per_model=2" >> /home/model-server/config.properti
 RUN apt-get install -y wget
 RUN if [ ! -f /home/model-server/models/ldm/text2img-large/model.ckpt ]; then \
         echo "Checkpoint not found!" && \
-        wget -O /home/model-server/models/ldm/text2img-large/model.ckpt https://storage.googleapis.com/latentdiffusion-bucket/models/ldm/text2img-large/model.ckpt ; \
+        wget -O /home/model-server/models/ldm/text2img-large/model.ckpt https://storage.googleapis.com/latentdiffusion-bucket-eu/models/ldm/text2img-large/model.ckpt ; \
     fi 
 
 RUN pip install -r /home/model-server/requirements.txt
